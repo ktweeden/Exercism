@@ -1,9 +1,9 @@
 #include "isogram.h"
-#include <string.h>
 #include <ctype.h>
+#include <string.h>
 
 bool is_isogram(const char phrase[]) {
-  #define ALPHABET 26
+#define ALPHABET 26
 
   bool letters[ALPHABET] = {false};
   const int length = strlen(phrase);
@@ -12,13 +12,11 @@ bool is_isogram(const char phrase[]) {
   for (int i = 0; i < length; i++) {
     int letter = phrase[i];
 
-    if (!isalpha(letter)) { 
-      continue; 
-    }
-    else if (letters[tolower(letter) - adjuster]) { 
-      return false; 
-    }
-    else {
+    if (!isalpha(letter)) {
+      continue;
+    } else if (letters[tolower(letter) - adjuster]) {
+      return false;
+    } else {
       letters[tolower(letter) - adjuster] = true;
     }
   }
