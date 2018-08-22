@@ -20,7 +20,6 @@ void test_abbreviation(char *phrase, char *expected)
 
 void test_null_string(void)
 {
-   TEST_IGNORE();               // delete this line to run test
    char *phrase = NULL;
    char *expected = NULL;
    test_abbreviation(phrase, expected);
@@ -28,7 +27,6 @@ void test_null_string(void)
 
 void test_basic_abbreviation(void)
 {
-   TEST_IGNORE();
    char *phrase = "Portable Network Graphics";
    char *expected = "PNG";
    test_abbreviation(phrase, expected);
