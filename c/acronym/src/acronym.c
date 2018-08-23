@@ -25,13 +25,13 @@ char *abbreviate(const char *phrase) {
       }
     }
 
-    char result[letter_count];
+    char* result = (char*) malloc(letter_count);
     for (int i = 0; i < letter_count; i++) {
-      result[i] = p[i];
+      result[i] = toupper(p[i]);
     }
-
+    free(p);
+    
     return (char*) result;
-  // free(p);
   }
 }
 
