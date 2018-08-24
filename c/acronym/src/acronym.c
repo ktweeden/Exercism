@@ -6,8 +6,9 @@
 #include <string.h>
 
 char *abbreviate(const char *phrase) {
-  if (phrase == NULL) {
-    return (char*) phrase;
+  if (phrase == NULL || strcmp(phrase, "") == 0) {
+    static char* null = NULL;
+    return null;
   }
   else {
     const int length = strlen(phrase);
@@ -30,13 +31,16 @@ char *abbreviate(const char *phrase) {
       result[i] = toupper(p[i]);
     }
     free(p);
-    
+
     return (char*) result;
   }
 }
 
 bool isseparator(char c) {
   if (isspace(c)) {
+    return true;
+  }
+  else if (c == '-') {
     return true;
   }
   return false;
