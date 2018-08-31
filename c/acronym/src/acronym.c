@@ -26,7 +26,8 @@ char *abbreviate(const char *phrase) {
       }
     }
 
-    char* result = (char*) malloc(letter_count);
+    char* result = (char*) malloc(letter_count+1);
+    result[letter_count] = '\0'; 
     for (int i = 0; i < letter_count; i++) {
       result[i] = toupper(p[i]);
     }
